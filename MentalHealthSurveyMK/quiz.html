@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Прашалник за ментално здравје и навики</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #6a5acd;
+            color: white;
+            padding: 20px 30px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 1.8rem;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover,
+        nav a.active {
+            color: #ffeb3b;
+            text-decoration: underline;
+        }
+        main {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px 35px;
+            border-radius: 8px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .question {
+            margin-bottom: 25px;
+        }
+        .question label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 5px;
+            border: 1px solid #bbb;
+            font-size: 1rem;
+            background-color: #fafafa;
+            transition: border-color 0.3s ease;
+        }
+        select:focus {
+            outline: none;
+            border-color: #6a5acd;
+            background-color: #fff;
+        }
+        button[type="submit"] {
+            background-color: #6a5acd;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #5941a9;
+        }
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            white-space: pre-line; /* да ги почитува новите редови */
+        }
+        .hidden {
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 50px;
+        }
+        @media (max-width: 640px) {
+            main {
+                margin: 20px 15px;
+                padding: 25px 20px;
+            }
+            header h1 {
+                font-size: 1.4rem;
+            }
+            nav a {
+                margin: 0 8px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Прашалник за ментално здравје и навики</h1>
+    <nav>
+        <a href="index.html">Почетна</a>
+        <a href="quiz.html" class="active">Прашалник</a>
+        <a href="about.html">За нас</a>
+    </nav>
+</header>
+<main>
+    <form id="quizForm">
+        <div class="question">
+            <label for="q1">Колку често се чувствувате стресирано?</label>
+            <select id="q1" required>
+                <option value="">Изберете</option>
+                <option value="0">Никогаш</option>
+                <option value="1">Понекогаш</option>
+                <option value="2">Често</option>
+                <option value="3">Многу често</option>
+            </select>
+        </div>
+        <div class="question">
+            <label for="q2">Колку часови дневно сте физички активни?</label>
+            <select id="q2" required>
+                <option value="">Изберете</option>
+                <option value="3">Повеќе од 2 часа</option>
+                <option value="2">1-2 часа</option>
+                <option value="1">Помалку од 1 час</option>
+                <option value="0">Никогаш</option>
+            </select>
+        </div>
+        <div class="question">
+            <label for="q3">Колку лесно се справувате со тешки ситуации?</label>
+            <select id="q3" required>
+                <option value="">Изберете</option>
+                <option value="3">Многу лесно</option>
+                <option value="2">Со одредени потешкотии</option>
+                <option value="1">Тешко</option>
+                <option value="0">Многу тешко</option>
+            </select>
+        </div>
+        <div class="question">
+            <label for="q4">Колку спиете во просек на ноќ?</label>
+            <select id="q4" required>
+                <option value="">Изберете</option>
+                <option value="3">8 или повеќе часа</option>
+                <option value="2">6-7 часа</option>
+                <option value="1">4-5 часа</option>
+                <option value="0">Помалку од 4 часа</option>
+            </select>
+        </div>
+        <div class="question">
+            <label for="q5">Колку време поминувате на отворено дневно?</label>
+            <select id="q5" required>
+                <option value="">Изберете</option>
+                <option value="3">Повеќе од 2 часа</option>
+                <option value="2">1-2 часа</option>
+                <option value="1">Помалку од 1 час</option>
+                <option value="0">Никогаш</option>
+            </select>
+        </div>
+        <div class="question">
+            <label for="q6">Колку често јадете здрави оброци?</label>
+            <select id="q6" required>
+                <option value="">Изберете</option>
+                <option value="3">Секој ден</option>
+                <option value="2">Повеќе пати неделно</option>
+                <option value="1">Понекогаш</option>
+                <option value="0">Ретко или никогаш</option>
+            </select>
+        </div>
+        <div class="question">
+            <label for="q7">Колку често се чувствувате среќно и задоволно?</label>
+            <select id="q7" required>
+                <option value="">Изберете</option>
+                <option value="3">Често</option>
+                <option value="2">Понекогаш</option>
+                <option value="1">Ретко</option>
+                <option value="0">Никогаш</option>
+            </select>
+        </div>
+        <div class="question">
+            <label for="q8">Колку пати неделно комуницирате со пријатели и семејство?</label>
+            <select id="q8" required>
+                <option value="">Изберете</option>
+                <option value="3">Повеќе пати неделно</option>
+                <option value="2">Понекогаш</option>
+                <option value="1">Ретко</option>
+                <option value="0">Никогаш</option>
+            </select>
+        </div>
+        <div class="question">
+            <label for="q9">Колку често правите паузи од дигитални уреди (мобилни, компјутер)?</label>
+            <select id="q9" required>
+                <option value="">Изберете</option>
+                <option value="3">Често</option>
+                <option value="2">Понекогаш</option>
+                <option value="1">Ретко</option>
+                <option value="0">Никогаш</option>
+            </select>
+        </div>
+        <div class="question">
+            <label for="q10">Колку се чувствувате мотивирано за учење и развој?</label>
+            <select id="q10" required>
+                <option value="">Изберете</option>
+                <option value="3">Многу</option>
+                <option value="2">Делумно</option>
+                <option value="1">Малку</option>
+                <option value="0">Никако</option>
+            </select>
+        </div>
+        <button type="submit">Испрати</button>
+    </form>
+    <div id="result" class="hidden"></div>
+</main>
+<footer>
+    <p>© 2025 Платформа за здравје и благосостојба на младите</p>
+</footer>
+<script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        let total = 0;
+        for(let i = 1; i <= 10; i++) {
+            let val = document.getElementById('q' + i).value;
+            total += Number(val);
+        }
+        const resultDiv = document.getElementById('result');
+
+        if(total >= 25) {
+            resultDiv.textContent = 'Одлично! Вие имате многу добри здравствени навики и ментална отпорност. Продолжете така!';
+            resultDiv.style.backgroundColor = '#d4edda';
+            resultDiv.style.color = '#155724';
+        } else if(total >= 15) {
+            resultDiv.innerHTML = 'Добро е, но има простор за подобрување.\n\nСовети за вас:\n- Обидете се да бидете повеќе физички активни.<br>- Одвојте време за релаксација и одмор.<br>- Хранете се здраво и балансирано.<br>- Одржувајте редовна комуникација со пријатели и семејство.<br>- Намалете го времето пред дигиталните уреди и одржувајте паузи.';
+            resultDiv.style.backgroundColor = '#fff3cd';
+            resultDiv.style.color = '#856404';
+        } else {
+            resultDiv.innerHTML = 'Се препорачува да побарате поддршка и да работите на подобрување на менталното здравје.\n\nСовети за вас:\n- Размислете за консултација со стручњак за ментално здравје.<br>- Вклучете се во физички активности.<br>- Работете на подобрување на спиењето.<br>- Поддржувајте комуникација со блиски лица.<br>- Пробајте техники за релаксација и медитација.';
+            resultDiv.style.backgroundColor = '#f8d7da';
+            resultDiv.style.color = '#721c24';
+        }
+        resultDiv.classList.remove('hidden');
+        resultDiv.scrollIntoView({behavior: 'smooth'});
+    });
+</script>
+</body>
+</html>
